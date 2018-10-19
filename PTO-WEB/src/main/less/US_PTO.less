@@ -1,4 +1,4 @@
-/*
+ /*
  * Copyright 2016 the original author or authors.
  *
  * You may obtain a copy of the License at
@@ -51,10 +51,20 @@
 @pagination-active-border:                @spring-blue;
 @table-border-color:                      @spring-brown;
 
+
+.transparent-overlay{
+  background-image: linear-gradient(rgba(6, 6, 69, 1.2), rgba(12, 12, 140, 0.8)) ;
+  background-size: cover;
+  position: fixed;
+  min-width: 100%;
+  top: 0px;
+}
+
 body {
 
-  background: linear-gradient( #004092, #020202, transparent), url('../images/tradeMarks.jpg') fixed;
+  background: url('../images/tradeMarks.jpg') fixed repeat-y;
   background-size: cover;
+  overflow: auto;
 }
 
 *[role="form"] {
