@@ -1,15 +1,21 @@
 .navbar {
-  border-top: 50px solid #004092;
+  border-top: 50px transparent;
   background-color: #020202;;
   margin-bottom: 0px;
+  margin-top:45px;
   border-bottom: 0;
   border-left: 0;
   border-right: 0;
+  max-width: 80%;
+  border-top-right-radius: 35px;
+  border-bottom-right-radius: 35px;
+
 }
 
-.navbar a.navbar-brand {
-  background: url("../images/nav-banner.png") -1px -1px no-repeat;
+ a.navbar-brand {
+  background: url("../images/nav_banner.png") -1px -1px no-repeat;
  // margin: 12px 0 6px;
+  margin-top: 8px;
   width: 229px;
   height: 75px;
   display: inline-block;
@@ -33,10 +39,6 @@ a.navbar-brand{
   -moz-transition: opacity 0.12s ease-in-out;
   -webkit-transition: opacity 0.12s ease-in-out;
   -o-transition: opacity 0.12s ease-in-out;
-}
-
-.navbar a:hover.navbar-brand span {
-  opacity: 1;
 }
 
 .navbar li > a, .navbar-text {
