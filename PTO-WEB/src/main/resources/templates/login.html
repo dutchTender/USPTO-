@@ -5,26 +5,67 @@
 
 >
 <head>
-    <title>Spring Security Example </title>
+    <title>USPTO.gov eFile Sign In </title>
 </head>
 <body>
 
 
                 <!-- Login Form -->
-                <div th:if="${param.error}">
+                <div  th:if="${param.error}">
                     Invalid username and password.
                 </div>
-                <div th:if="${param.logout}">
+                <div  th:if="${param.logout}">
                     You have been logged out.
                 </div>
 
+                <div class="container" >
 
-                <form th:action="@{/login}" method="post" class="form-horizontal">
-                    <div class="form-group" ><label style="color: whitesmoke"> <span class="glyphicon glyphicon-user"></span> User Name : <input type="text" class="form-control" name="username" th:value="${user.email}"/> </label></div>
-                    <div class="form-group"><label style="color: whitesmoke"> <span class="glyphicon glyphicon-lock"></span> Password: <input type="password" class="form-control" name="password"/> </label></div>
-                    <div class="form-group"><button  class="btn btn-default" type="submit" value="Sign In"><span class="glyphicon glyphicon-log-in" th:style="left-align"></span> &nbsp;&nbsp;    Sign In&nbsp;</button></div>
-                </form>
+                    <form th:action="@{/login}" method="post" class="form form-check-input form-control-sm "  >
+                        <div class="card card-login " style="background-color: whitesmoke; min-height: 320px; margin-left: 200px;  max-width: 50%;  margin-bottom: 200px; border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;"  >
+                            <div class="card-header card-header-blue text-center" >
+                                <b class="card-title" style="margin-left: 300px; "><a style="font-size: x-small;margin-top: 100px;" href="/registration">New User</a></b>
+                            </div>
+                            <div class="card-body ">
+                                <p class="card-description text-center"><b>Existing User</b></p>
 
+                                <span class="bmd-form-group"  >
+                                  <div class="input-group">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text" style="margin-left:90px;">
+                                        <span class="glyphicon glyphicon-user"></span>
+                                      </span>
+                                    </div>
+                                    <input style="margin-left: 90px;" type="email" class="form-control" name="username" placeholder="Email...">
+                                  </div>
+                                </span>
+                                <span class="bmd-form-group" style="margin-left: 90px;">
+                                  <div class="input-group" >
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text" style="margin-left: 90px;">
+                                        <span class="glyphicon glyphicon-lock"></span>
+                                      </span>
+                                    </div>
+                                    <input  style="margin-left: 90px;" type="password" class="form-control" name="password" placeholder="Password...">
+                                  </div>
+                                </span>
+                            </div>
+                            <div class="card-footer justify-content-center" style="margin-bottom: 80px;">
 
+                                <div class="form-group" ><button style="margin-left: 90px; min-width: 292px; background-color: #0b75c9; border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;" class="btn btn-default" type="submit" value="Sign In"><span class="glyphicon glyphicon-log-in" ></span> &nbsp;&nbsp;    Sign In&nbsp;</button></div>
+                            </div>
+
+                        </div>
+                    </form>
+
+        </div>
+                <script>
+                    $(document).ready(function() {
+                        demo.checkFullPageBackgroundImage();
+                        setTimeout(function() {
+                            // after 1000 ms we add the class animated to the login/register card
+                            $('.card').removeClass('card-hidden');
+                        }, 700);
+                    });
+                </script>
 </body>
 </html>
