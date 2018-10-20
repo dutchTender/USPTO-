@@ -148,7 +148,7 @@
                                 <div class="col-sm-3">
                                     <div class="form-group">
                                         <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" value="" disabled> I agree to</input>
+                                            <input class="form-check-input confirmDisclaimerCheckbox" type="checkbox" value="" disabled> I agree to</input>
                                             <a data-target="#eFileDisclaimerModal" data-toggle="modal" href="#eFileDisclaimerModal">USPTO.gov eFile Disclaimer</a>
                                             <span class="form-check-sign">
                               <span class="check"></span>
@@ -161,7 +161,7 @@
                                 <label class="col-sm-2 col-form-label">Register</label>
                                 <div class="col-sm-3">
                                     <div class="form-group">
-                                        <button style="margin-left: 90px; min-width: 292px; background-color: #0b75c9; border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;" class="btn btn-default" type="submit" value="Register" disabled><span class="glyphicon glyphicon-log-in" disabled="true"></span> &nbsp;&nbsp;Register&nbsp;</button>
+                                        <button style="margin-left: 90px; min-width: 292px; background-color: #0b75c9; border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;" class="btn btn-default registrationSubmit" type="submit" value="Register" disabled><span class="glyphicon glyphicon-log-in" disabled="true"></span> &nbsp;&nbsp;Register&nbsp;</button>
                                     </div>
                                 </div>
                             </div>
@@ -226,6 +226,16 @@
             // after 1000 ms we add the class animated to the login/register card
             $('.form-container').fadeIn('slow');
         }, 600);
+
+        
+        $('.disclaimerAcceptButton').click( function () {
+
+            $('.confirmDisclaimerCheckbox').prop('disabled', false)
+            $('.confirmDisclaimerCheckbox').prop('checked', true);
+            $('.registrationSubmit').prop('disabled', false);
+        });
+            
+        
     });
 </script>
 
