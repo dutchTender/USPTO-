@@ -80,10 +80,12 @@ public class RegistrationController {
         if (result.hasErrors()) {
             System.out.println("result has errors !!!!!!!!!!!!!!!!!!!!"+result.getAllErrors().toString());
 
-            return new ModelAndView("index2", "user", accountDto);
+            return new ModelAndView("registration/index", "user", accountDto);
         }
         else {
             //return new ModelAndView("/account/userHome", "users", accountDto);
+            // new users needs to log in. will need to verify email before activation.
+
             return new ModelAndView("login", "user",accountDto);
         }
 

@@ -7,11 +7,11 @@
 <body>
 
 <!-- End Navbar -->
-<div class="content" style="overflow: auto;">
+<div class="content" style="overflow:auto;">
     <div class="container-fluid" >
 
             <div class="col-md-14" >
-                <div class="form-container" style="max-height:3000px; margin-bottom: 300px; background-image: linear-gradient(whitesmoke, white); border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; border-top-left-radius: 20px; border-top-right-radius: 20px;">
+                <div class="form-container" style="display:none; max-height:3000px; margin-bottom: 300px; background-image: linear-gradient(whitesmoke, white); border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; border-top-left-radius: 20px; border-top-right-radius: 20px;">
                     <div style="position: relative;top:26px; margin-left: 40px;">
                         <h1><b>New User Account</b></h1>
                     </div>
@@ -23,33 +23,37 @@
                         </div>
                     </div>
                     <div class="card-body ">
-                        <th:form method="post" action="/newUser" class="form-horizontal form-check-input" >
+                        <form method="post" action="/newUser" class="form-horizontal" th:object="${userCredentialsDTO}">
 
                             <div class="row">
-                                <label class="col-sm-2 col-form-label">E-Mail</label>
+                                <label class="col-sm-2 col-form-label">E-Mail <r>*</r></label>
                                 <div class="col-sm-6">
 
                                     <div class="form-group">
-                                        <input type="email" name="email" class="form-control" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;"  th:required="required">
+                                        <input type="email" th:field="*{email}"  id="email" placeholder="Email" class="form-control" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;"  th:required>
                                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                        <p th:each="error : ${#fields.errors('email')}"
+                                           th:text="${error}">Validation error</p>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <label class="col-sm-2 col-form-label">Password</label>
+                                <label class="col-sm-2 col-form-label">Password *</label>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input type="text" name="password" class="form-control" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;" th:required>
+                                        <input type="text"  th:field="*{password}" id="password" placeholder="Password" class="form-control" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;" th:required>
+                                        <p th:each="error : ${#fields.errors('password')}"
+                                           th:text="${error}">Validation error</p>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <label class="col-sm-2 col-form-label">Confirm</label>
+                                <label class="col-sm-2 col-form-label">Confirm *</label>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input type="text" name="passwordConfirm" class="form-control" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;" th:required>
+                                        <input type="text" th:field="*{matchingPassword}" id="password" placeholder="Password" class="form-control" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;" th:required>
                                     </div>
                                 </div>
                             </div>
@@ -129,31 +133,34 @@
                                 </div>
                             </div>
 
-
                             <div class="row">
-                                <label class="col-sm-2 col-form-label label-checkbox">Select application view for new applications</label>
-                                <div class="col-sm-10 checkbox-radios">
-
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="radio" name="exampleRadios" value="option2" checked> Guided User View
-                                            <span class="circle">
-                                              <span class="check"></span>
-                                            </span>
-                                        </label>
+                                <label class="col-sm-2 col-form-label">Phone</label>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" name="phone" class="form-control" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                                        <span class="help-block">Your phone number won't be disclosed anywhere </span>
                                     </div>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="radio" name="exampleRadios" value="option1"> Experienced User View
-                                            <span class="circle">
-                                               <span class="check"></span>
-                                            </span>
-                                        </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-sm-2 col-form-label">disclaimer</label>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-bottom: auto;">
+                                <label class="col-sm-2 col-form-label">Register</label>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <button style="margin-left: 90px; min-width: 292px; background-color: #0b75c9; border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;" class="btn btn-default" type="submit" value="Register"><span class="glyphicon glyphicon-log-in" ></span> &nbsp;&nbsp;Register&nbsp;</button>
                                     </div>
                                 </div>
                             </div>
 
-                        </th:form>
+
+                        </form>
                     </div>
                 </div>
             </div>
