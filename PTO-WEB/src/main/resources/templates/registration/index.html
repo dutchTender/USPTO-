@@ -25,68 +25,68 @@
                     <div class="card-body ">
                         <form method="get" action="/" class="form-horizontal">
                             <div class="row">
-                                <label class="col-sm-2 col-form-label">With help</label>
-                                <div class="col-sm-10">
+                                <label class="col-sm-2 col-form-label">First Name</label>
+                                <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control">
-                                        <span class="bmd-help">A block of help text that breaks onto a new line.</span>
+                                        <input type="text" name="firstName" class="form-control" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <label class="col-sm-2 col-form-label">Password</label>
-                                <div class="col-sm-10">
+                                <label class="col-sm-2 col-form-label">Middle Name</label>
+                                <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input type="password" class="form-control">
+                                        <input type="text" name="middleName" class="form-control" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <label class="col-sm-2 col-form-label">Last Name</label>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" name="lastName" class="form-control" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <label class="col-sm-2 col-form-label">Placeholder</label>
-                                <div class="col-sm-10">
+                                <label class="col-sm-2 col-form-label">E-Mail</label>
+                                <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="placeholder">
+                                        <input type="email" name="email" class="form-control" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
                                     </div>
                                 </div>
                             </div>
+
                             <div class="row">
-                                <label class="col-sm-2 col-form-label">Disabled</label>
-                                <div class="col-sm-10">
+                                <label class="col-sm-2 col-form-label">Suffix</label>
+                                <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" value="Disabled input here.." disabled>
+                                        <select  class="form-control" name="lastName"  style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                                            <option value="mr">Mr</option>
+                                            <option value="mrs">Mrs</option>
+                                            <option value="ms">ms</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <label class="col-sm-2 col-form-label">Static control</label>
-                                <div class="col-sm-10">
-                                    <div class="form-group">
-                                        <p class="form-control-static">hello@creative-tim.com</p>
-                                    </div>
-                                </div>
+
+
+
+                            <div class="card-text" style=" position:relative; left:-60px; min-width: 1050px; background-image: linear-gradient(gray, lightgray); margin-top: 30px;margin-right: 400px; margin-bottom: 40px; padding:5px 0px 5px 75px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; border-top-left-radius: 20px; border-top-right-radius: 20px;">
+                                <h5 class="card-title"><b>Account View Preference</b></h5>
                             </div>
+
+
+
                             <div class="row">
-                                <label class="col-sm-2 col-form-label label-checkbox">Checkboxes and radios</label>
+                                <label class="col-sm-2 col-form-label label-checkbox">Select application view for new applications</label>
                                 <div class="col-sm-10 checkbox-radios">
+
                                     <div class="form-check">
                                         <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" value=""> First Checkbox
-                                            <span class="form-check-sign">
-                              <span class="check"></span>
-                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" value=""> Second Checkbox
-                                            <span class="form-check-sign">
-                              <span class="check"></span>
-                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="radio" name="exampleRadios" value="option2" checked> First Radio
+                                            <input class="form-check-input" type="radio" name="exampleRadios" value="option2" checked> Guided User View
                                             <span class="circle">
                               <span class="check"></span>
                             </span>
@@ -94,7 +94,7 @@
                                     </div>
                                     <div class="form-check">
                                         <label class="form-check-label">
-                                            <input class="form-check-input" type="radio" name="exampleRadios" value="option1"> Second Radio
+                                            <input class="form-check-input" type="radio" name="exampleRadios" value="option1"> Experienced User View
                                             <span class="circle">
                               <span class="check"></span>
                             </span>
@@ -102,35 +102,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <label class="col-sm-2 col-form-label label-checkbox">Inline checkboxes</label>
-                                <div class="col-sm-10 checkbox-radios">
-                                    <div class="form-check form-check-inline">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" value=""> a
-                                            <span class="form-check-sign">
-                              <span class="check"></span>
-                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" value=""> b
-                                            <span class="form-check-sign">
-                              <span class="check"></span>
-                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" value=""> c
-                                            <span class="form-check-sign">
-                              <span class="check"></span>
-                            </span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
+
                         </form>
                     </div>
                 </div>
