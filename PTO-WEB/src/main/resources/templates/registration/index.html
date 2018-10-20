@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <title>Registration Home Page</title>
 </head>
-<body>
+<body style="overflow: auto;">
 
 <!-- End Navbar -->
-<div class="content" >
-    <div class="container-fluid" style="min-height: 2000px; background-image: linear-gradient(whitesmoke, white); border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; border-top-left-radius: 20px; border-top-right-radius: 20px;">
+<div class="content">
+    <div class="container-fluid" style="background-image: linear-gradient(whitesmoke, white); border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; border-top-left-radius: 20px; border-top-right-radius: 20px;">
         <div class="row">
-
             <div class="col-md-12">
                 <div class="card">
 
@@ -24,6 +23,42 @@
                     </div>
                     <div class="card-body ">
                         <form method="get" action="/" class="form-horizontal">
+
+                            <div class="row">
+                                <label class="col-sm-2 col-form-label">E-Mail</label>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input type="email" name="email" class="form-control" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="row">
+                                <label class="col-sm-2 col-form-label">Password</label>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" name="password" class="form-control" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <label class="col-sm-2 col-form-label">Confirm Password</label>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" name="passwordConfirm" class="form-control" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                                    </div>
+                                </div>
+                            </div>
+
+                        <div class="card-text" style=" position:relative; left:-60px; min-width: 1050px; background-image: linear-gradient(gray, lightgray); margin-top: 20px;margin-right: 400px; margin-bottom: 20px; padding:5px 0px 5px 75px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; border-top-left-radius: 20px; border-top-right-radius: 20px;">
+                            <h5 class="card-title"><b>Owner Details</b></h5>
+                        </div>
+
                             <div class="row">
                                 <label class="col-sm-2 col-form-label">First Name</label>
                                 <div class="col-sm-6">
@@ -50,20 +85,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <label class="col-sm-2 col-form-label">E-Mail</label>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <input type="email" name="email" class="form-control" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-                                    </div>
-                                </div>
-                            </div>
 
                             <div class="row">
                                 <label class="col-sm-2 col-form-label">Suffix</label>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <select  class="form-control" name="lastName"  style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                                        <select  class="form-control" name="suffix"  style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
                                             <option value="mr">Mr</option>
                                             <option value="mrs">Mrs</option>
                                             <option value="ms">ms</option>
@@ -72,13 +99,9 @@
                                 </div>
                             </div>
 
-
-
-                            <div class="card-text" style=" position:relative; left:-60px; min-width: 1050px; background-image: linear-gradient(gray, lightgray); margin-top: 30px;margin-right: 400px; margin-bottom: 40px; padding:5px 0px 5px 75px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; border-top-left-radius: 20px; border-top-right-radius: 20px;">
-                                <h5 class="card-title"><b>Account View Preference</b></h5>
-                            </div>
-
-
+                        <div class="card-text" style=" position:relative; left:-60px; min-width: 1050px; background-image: linear-gradient(gray, lightgray); margin-top: 20px;margin-right: 400px; margin-bottom: 20px; padding:5px 0px 5px 75px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; border-top-left-radius: 20px; border-top-right-radius: 20px;">
+                            <h5 class="card-title"><b>Geo-Location Details</b></h5>
+                        </div>
 
                             <div class="row">
                                 <label class="col-sm-2 col-form-label label-checkbox">Select application view for new applications</label>
