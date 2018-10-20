@@ -6,62 +6,139 @@
 </head>
 <body>
 
-<div class="container">
-    <form action="/newUser" th:object="${userCredentialsDTO}" method="POST" enctype="utf8" class="form-horizontal" role="form">
+<!-- End Navbar -->
+<div class="content" >
+    <div class="container-fluid" style="min-height: 2000px; background-image: linear-gradient(whitesmoke, white); border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; border-top-left-radius: 20px; border-top-right-radius: 20px;">
+        <div class="row">
 
-        <h1 style="text-align: center">Account Registration</h1>
-        <div class="form-group">
-            <label for="firstName" class="col-sm-3 control-label">First Name</label>
-            <div class="col-sm-9">
-                <input th:field="*{firstName}" type="text" id="firstName" placeholder="First Name" class="form-control" autofocus>
-                <p th:each="error: ${#fields.errors('firstName')}"
-                   th:text="${error}">Validation error</p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="lastName" class="col-sm-3 control-label">Last Name</label>
-            <div class="col-sm-9">
-                <input th:field="*{lastName}" type="text" id="lastName" placeholder="Last Name" class="form-control" autofocus>
-                <p th:each="error : ${#fields.errors('lastName')}"
-                   th:text="${error}">Validation error</p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="email" class="col-sm-3 control-label">Email* </label>
-            <div class="col-sm-9">
-                <input type="email" th:field="*{email}"  id="email" placeholder="Email" class="form-control" name= "email">
-                <p th:each="error : ${#fields.errors('email')}"
-                   th:text="${error}">Validation error</p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="password" class="col-sm-3 control-label">Password*</label>
-            <div class="col-sm-9">
-                <input type="password" th:field="*{password}" id="password" placeholder="Password" class="form-control">
-                <p th:each="error : ${#fields.errors('password')}"
-                   th:text="${error}">Validation error</p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="password" class="col-sm-3 control-label">Confirm Password*</label>
-            <div class="col-sm-9">
-                <input type="password" th:field="*{matchingPassword}" id="password" placeholder="Password" class="form-control">
-            </div>
-        </div>
+            <div class="col-md-12">
+                <div class="card">
 
-        <div class="form-group">
-            <label for="phoneNumber" class="col-sm-3 control-label">Phone number </label>
-            <div class="col-sm-9">
-                <input type="phoneNumber" id="phoneNumber" placeholder="Phone number" class="form-control">
-                <span class="help-block">Your phone number won't be disclosed anywhere </span>
+                    <div class="card-header card-header-rose card-header-text">
+                        <div style="margin-top: 10px; margin-left: 20px;">
+                            <h1><b>New User Account</b></h1>
+                        </div>
+                        <div class="card-text" style=" position:relative; left:-60px; min-width: 1050px; background-image: linear-gradient(gray, lightgray); margin-top: 30px;margin-right: 400px; margin-bottom: 40px; padding:5px 0px 5px 75px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; border-top-left-radius: 20px; border-top-right-radius: 20px;">
+                            <h5 class="card-title"><b>Account Details</b></h5>
+                        </div>
+                    </div>
+                    <div class="card-body ">
+                        <form method="get" action="/" class="form-horizontal">
+                            <div class="row">
+                                <label class="col-sm-2 col-form-label">With help</label>
+                                <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control">
+                                        <span class="bmd-help">A block of help text that breaks onto a new line.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-sm-2 col-form-label">Password</label>
+                                <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <input type="password" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-sm-2 col-form-label">Placeholder</label>
+                                <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="placeholder">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-sm-2 col-form-label">Disabled</label>
+                                <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" value="Disabled input here.." disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-sm-2 col-form-label">Static control</label>
+                                <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <p class="form-control-static">hello@creative-tim.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-sm-2 col-form-label label-checkbox">Checkboxes and radios</label>
+                                <div class="col-sm-10 checkbox-radios">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" value=""> First Checkbox
+                                            <span class="form-check-sign">
+                              <span class="check"></span>
+                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" value=""> Second Checkbox
+                                            <span class="form-check-sign">
+                              <span class="check"></span>
+                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="exampleRadios" value="option2" checked> First Radio
+                                            <span class="circle">
+                              <span class="check"></span>
+                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="exampleRadios" value="option1"> Second Radio
+                                            <span class="circle">
+                              <span class="check"></span>
+                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-sm-2 col-form-label label-checkbox">Inline checkboxes</label>
+                                <div class="col-sm-10 checkbox-radios">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" value=""> a
+                                            <span class="form-check-sign">
+                              <span class="check"></span>
+                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" value=""> b
+                                            <span class="form-check-sign">
+                              <span class="check"></span>
+                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" value=""> c
+                                            <span class="form-check-sign">
+                              <span class="check"></span>
+                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
+
         </div>
+    </div>
+</div>
 
-
-
-        <button type="submit" class="btn btn-primary btn-block">Register</button>
-    </form> <!-- /form -->
-    <a th:href="@{/login.html}">login</a>
-</div> <!-- ./container -->
 </body>
 </html>
