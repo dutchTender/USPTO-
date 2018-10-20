@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"  th:replace="~{fragments/layout :: layout (~{::body},'registration')}">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout (~{::body},'registration')}" xmlns="http://www.w3.org/1999/html">
 <head >
     <meta charset="UTF-8">
     <title>Registration Home Page</title>
@@ -144,9 +145,15 @@
                             </div>
                             <div class="row">
                                 <label class="col-sm-2 col-form-label">disclaimer</label>
-                                <div class="col-sm-6">
+                                <div class="col-sm-3">
                                     <div class="form-group">
-
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" value="" disabled> I agree to</input>
+                                            <a data-target="#eFileDisclaimerModal" data-toggle="modal" href="#eFileDisclaimerModal">USPTO.gov eFile Disclaimer</a>
+                                            <span class="form-check-sign">
+                              <span class="check"></span>
+                            </span>
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -154,7 +161,7 @@
                                 <label class="col-sm-2 col-form-label">Register</label>
                                 <div class="col-sm-3">
                                     <div class="form-group">
-                                        <button style="margin-left: 90px; min-width: 292px; background-color: #0b75c9; border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;" class="btn btn-default" type="submit" value="Register"><span class="glyphicon glyphicon-log-in" ></span> &nbsp;&nbsp;Register&nbsp;</button>
+                                        <button style="margin-left: 90px; min-width: 292px; background-color: #0b75c9; border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;" class="btn btn-default" type="submit" value="Register" disabled><span class="glyphicon glyphicon-log-in" disabled="true"></span> &nbsp;&nbsp;Register&nbsp;</button>
                                     </div>
                                 </div>
                             </div>
@@ -165,6 +172,49 @@
                 </div>
             </div>
 
+
+    </div>
+</div>
+
+
+<!-- Disclaimer Modal -->
+<div id="eFileDisclaimerModal" class="modal fade modal-lg" role="dialog" tabindex="-1" data-backdrop="false">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">USPTO.gov eFile Legal Disclaimer</h4>
+            </div>
+            <div class="modal-body">
+                eTerminal Disclaimer
+                The United States Patent and Trademark Office is pleased to announce the release of eTerminal Disclaimer in EFS-Web. The new eTerminal Disclaimer provides applicants with many advantages and promotes greater efficiency in the patent examination process. This web-based eTerminal Disclaimer can be filled out completely online through web-screens and no EFS-Web fillable forms are required. eTerminal Disclaimers are auto-processed and approved immediately upon submission if the request meets all of the requirements.
+
+                Fees must be paid immediately which will then provide users more financial flexibility. A paper terminal disclaimer filing requires a fee but does not guarantee a terminal disclaimer approval. Each eTerminal Disclaimer filed requires a single terminal disclaimer fee, but can include up to 50 "reference applications" and 50 "prior patents."
+
+                The electronic Terminal Disclaimer (eTD) can only be used if:
+
+                the inventor(s) named as the applicant in the application own(s) 100% of the entire right, title and interest;
+
+                the assignee and/or obligated assignee named as the applicant in the application owns 100% of the entire right, title and interest; or
+
+                some combination of inventor(s) and partial assignee(s) named as the applicant in the application together own 100% of the entire right, title and interest.
+
+                Basic Guidelines for Filing eTerminal Disclaimers:
+
+                Must be able to access EFS-Web registered.
+                Registered eFiler users are strongly advised to transmit their electronic filings sufficiently early in the day to allow time for alternative paper filing when transmission cannot be initiated or correctly completed.
+                The ability to submit an eTerminal Disclaimer under EFS-Web Contingency is not permitted.
+                Consult the current fee schedule available at http://www.uspto.gov/about/offices/cfo/finance/fees.jsp for the correct fee amount. The fee required to be paid upon filing a request for eTerminal Disclaimer is: Statutory disclaimer, including terminal disclaimer.
+                In accordance with MPEP 1490 V and 37 CFR 1.321, Terminal Disclaimers (including eTerminal Disclaimers) will only be considered in compliance with the requirements when filed into a PENDING Nonprovisional Utility application (including national stage and reissue) or PENDING Design application (including reissue).  If an eTerminal Disclaimer is filed after payment of the issue fee but before the patent grant date, a request for Certificate of Correction must be filed requesting that the face of the patent be amended to state --This patent is subject to a terminal disclaimer.
+                Requests for terminal disclaimers for plant applications, reexaminations and terminal disclaimers based on a joint research agreement must be filed by paper.
+                For assistance with filing an eTerminal Disclaimer, or to suggest improvements, please call the Patent Electronic Business Center at 866-217-9197 (toll free) or send an email to EBC@uspto.gov (link sends e-mail)
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="disclaimerAcceptButton btn btn-default" data-dismiss="modal">Accept</button>
+            </div>
+        </div>
 
     </div>
 </div>
