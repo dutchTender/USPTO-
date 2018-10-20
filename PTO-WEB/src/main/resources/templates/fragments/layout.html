@@ -22,7 +22,7 @@
 
 </head>
 
-<body>
+<body style="overflow: auto;">
 <div class="transparent-overlay">
 <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
@@ -79,6 +79,11 @@
         </div>
     </div>
 </nav>
+    <!--jquery and web jars -->
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
 <div class="container-fluid">
     <div class="container xd-container">
 
@@ -88,11 +93,10 @@
         <br/>
 
     </div>
+
 </div>
 </div>
-<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
-<script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
-<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
 
 </body>
 
