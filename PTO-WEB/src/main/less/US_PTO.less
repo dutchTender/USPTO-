@@ -29,10 +29,10 @@
 @navbar-default-link-color:         @spring-light-grey;
 @navbar-default-link-active-color:  @spring-light-grey;
 @navbar-default-link-hover-color:   @spring-light-grey;
-@navbar-default-link-hover-bg:      @spring-blue;
+@navbar-default-link-hover-bg:      #546E8C;
 @navbar-default-toggle-icon-bar-bg: @spring-light-grey;
 @navbar-default-toggle-hover-bg:    transparent;
-@navbar-default-link-active-bg:     @spring-blue;
+@navbar-default-link-active-bg:     #546E8C;
 
 @border-radius-base:             0;
 @border-radius-large:            0;
@@ -64,6 +64,23 @@
 
   overflow-x: hidden;
 }
+
+
+ .navbar li:hover > a { //this doesn't seem to do anything???
+   border-bottom-left-radius: 20px;
+   border-bottom-right-radius: 20px;
+   border-top-left-radius: 20px;
+   border-top-right-radius: 20px;
+
+ }
+
+ .navbar li:active > a { //this doesn't seem to do anything???
+   border-bottom-left-radius: 20px;
+   border-bottom-right-radius: 20px;
+   border-top-left-radius: 20px;
+   border-top-right-radius: 20px;
+
+ }
 
 body {
 
