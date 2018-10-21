@@ -89,7 +89,7 @@
 
                                     <div class="card-footer justify-content-center" style="padding-top: 10px;  position:relative;top: 10px; padding-bottom: 50px;">
 
-                                        <div class="form-group" ><button style="float:right; margin:auto; min-width: 100px; background-color: #0b75c9; border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;" class="btn btn-default" type="submit" value="Sign In"><span class="glyphicon glyphicon-log-in" ></span> &nbsp;&nbsp; Change&nbsp;</button></div>
+                                        <div class="form-group" ><button type="button" data-target="#updateSecurityQuestions" data-toggle="modal" style="float:right; margin:auto; min-width: 100px; background-color: #0b75c9; border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;" class="btn btn-default"  value="Update Security Question"><span class="glyphicon glyphicon-log-in" ></span> &nbsp;&nbsp; Change&nbsp;</button></div>
                                     </div>
 
                                 </div>
@@ -299,7 +299,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Change Email Address</h4>
+                <h4 class="modal-title">Change Security Question</h4>
             </div>
             <div class="modal-body">
 
@@ -310,8 +310,25 @@
                         <div class="col-sm-6">
 
                             <div class="form-group">
-                                <select   id="questions1" placeholder="Password" class="form-control" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;"></select>
-                                <small class="form-text text-muted">Update the password associated with this account.</small>
+                                <select   id="questions1" placeholder="Password" class="form-control" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                                            <option>what was your first car?</option>
+                                            <option>what is the name of your favourite pet?</option>
+                                            <option>what city were you in new years eve 1999?</option>
+                                </select>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label class="col-sm-2"><b style="margin-left: 10px; padding-top: 10px;">Answer:</b></label>
+                        <div class="col-sm-6">
+
+                            <div class="form-group">
+                                <input type="text"  id="answer1" placeholder="spot" class="form-control" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                                <small id="answerhelp" class="form-text text-muted">answer to your security question. this also help us secure and recover your account.</small>
 
                             </div>
                         </div>
@@ -347,7 +364,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Change Email Address</h4>
+                            <h4 class="modal-title">Change Account Password</h4>
                         </div>
                         <div class="modal-body">
 
