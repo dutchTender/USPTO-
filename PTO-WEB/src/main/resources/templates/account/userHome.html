@@ -244,6 +244,8 @@
 
 
 </div>
+<!-- end of main content-->
+
 
 <!--update email modal -->
         <div id="updateEmail" class="modal modal-email fade modal-lg" role="dialog" tabindex="-1" data-backdrop="false">
@@ -289,7 +291,55 @@
 <!-- end of update email modal -->
 
 
-            <!--update password modal -->
+<!--update security questions modal -->
+<div id="updateSecurityQuestions" class="modal modal-password fade modal-lg" role="dialog" tabindex="-1" data-backdrop="false">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Change Email Address</h4>
+            </div>
+            <div class="modal-body">
+
+                <form method="post" action="/updateUserQuestions" class="form-horizontal">
+
+                    <div class="row">
+                        <label class="col-sm-2"><b style="margin-left: 10px; padding-top: 10px;">User Security Questions:</b></label>
+                        <div class="col-sm-6">
+
+                            <div class="form-group">
+                                <select   id="questions1" placeholder="Password" class="form-control" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;"></select>
+                                <small class="form-text text-muted">Update the password associated with this account.</small>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </form>
+
+
+
+            </div>
+            <div class="modal-footer">
+                <div class="form-group">
+                    <button type="button" class="disclaimerDenyButton" data-dismiss="modal"><span class="glyphicon glyphicon-thumbs-down" disabled="true"></span> &nbsp;&nbsp;<b>Cancel</b>&nbsp;</button>
+                    <button type="button" class="disclaimerAcceptButton" data-dismiss="modal"><span class="glyphicon glyphicon-thumbs-up" disabled="true"></span> &nbsp;&nbsp;<b>Update</b>&nbsp;</button>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- end of update password modal -->
+
+
+
+
+<!--update password modal -->
             <div id="updatePassword" class="modal modal-password fade modal-lg" role="dialog" tabindex="-1" data-backdrop="false">
                 <div class="modal-dialog">
 
@@ -304,15 +354,31 @@
                             <form method="post" action="/updateUserPassword" class="form-horizontal">
 
                                 <div class="row">
-                                    <label class="col-sm-2"><b style="margin-left: 10px; padding-top: 10px;">Password:</b></label>
+                                    <label class="col-sm-2"><b style="margin-left: 10px; padding-top: 10px;">Current Password:</b></label>
                                     <div class="col-sm-6">
 
                                         <div class="form-group">
-                                            <input type="password"  id="password" placeholder="Password" class="form-control" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;"  th:value="${account.password}">
-                                            <small id="passwordHelp" class="form-text text-muted">Update the password associated with this account.</small>
+                                            <input type="password"  id="oldpassword" placeholder="Password" class="form-control" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;"  th:value="${account.password}">
+                                            <small id="passwordHelp1" class="form-text text-muted">Enter you current password here.</small>
 
                                         </div>
                                     </div>
+
+
+                                </div>
+
+                                <div class="row">
+                                    <label class="col-sm-2"><b style="margin-left: 10px; padding-top: 10px;">New Password:</b></label>
+                                    <div class="col-sm-6">
+
+                                        <div class="form-group">
+                                            <input type="password"  id="password" placeholder="Password" class="form-control" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;" >
+                                            <small id="passwordHelp2" class="form-text text-muted">Enter your New password here.</small>
+
+                                        </div>
+                                    </div>
+
+
                                 </div>
                             </form>
 
@@ -330,7 +396,7 @@
                     </div>
                 </div>
             </div>
-                <!-- end of update password modal -->
+<!-- end of update password modal -->
 
 <script>
     $(document).ready(function() {
