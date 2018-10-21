@@ -20,6 +20,10 @@ public class UserCredentials_JPA_service implements UserCredentialsService {
 
     private final UserCredentialsRepository userCredentialsRepository;
 
+    @Override
+    public UserCredentials findByEmail(String email) {
+        return userCredentialsRepository.findByEmail(email);
+    }
 
     @Override
     public Set<UserCredentials> findAll() {
