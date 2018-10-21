@@ -24,6 +24,7 @@ public class OwnerController {
 
 
 
+    // profile/ user account page controller
     @RequestMapping({"/accounts/userHome"})
     public String dashboard(Model model){
 
