@@ -51,25 +51,32 @@
                       </a>
                   </li>
 
-                  <li th:replace="::menuItem ('/accounts/userHome','dashboard','home page','home','dashboard')">
+                  <li th:replace="::menuItem ('/accounts/dashboard','dashboard','dashboard page','dashboard','Home')">
                       <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>
                       <span>dashboard</span>
                   </li>
 
-                  <li th:replace="::menuItem ('/accounts/mail','mail','about','inbox','message-center')">
-                      <span class="glyphicon glyphicon-inbox" aria-hidden="true"></span>
-                      <span>message center</span>
+                  <li th:replace="::menuItem ('/accounts/applications','applications','applications','paperclip','applications')">
+                      <span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
+                      <span>dashboard</span>
                   </li>
 
-
-
-
-                  <li th:replace="::menuItem ('/account/assets','trade marks','trade mark', 'piggy-bank','trademarks')">
-                      <span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>
+                  <li th:replace="::menuItem ('/accounts/actions','actions','actions', 'alert','Actions')">
+                      <span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
                       <span>Error</span>
                   </li>
 
-                  <li th:replace="::menuItem ('/logout','logout','sign out', 'log-out','logout')">
+                  <li th:replace="::menuItem ('/accounts/resources','resources','resources', 'piggy-bank','Resources')">
+                  <span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>
+                      <span>Error</span>
+                  </li>
+
+                  <li th:replace="::menuItem ('/accounts/userHome','profile','user profile', 'user','user')">
+                      <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                      <span>Error</span>
+                  </li>
+
+                  <li th:replace="::menuItem ('/logout','logout','sign out', 'log-out','')">
                       <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
 
                       <span>Error</span>
