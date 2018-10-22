@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layoutSession :: layout (~{::body},'user')}" xmlns="http://www.w3.org/1999/html">
+<head >
+    <meta charset="UTF-8">
+    <title>Registration Home Page</title>
+</head>
+<body>
+
+<!-- End Navbar -->
+<div class="content" >
+
+
+</div>
+<!-- end of main content-->
+
+
+
+
+
+
+
+
+<script>
+    $(document).ready(function() {
+        $('.form-container').hide();
+        setTimeout(function() {
+            // after 1000 ms we add the class animated to the login/register card
+            $('.form-container').fadeIn(500);
+        }, 500);
+
+
+
+
+    });
+</script>
+
+</body>
+</html>

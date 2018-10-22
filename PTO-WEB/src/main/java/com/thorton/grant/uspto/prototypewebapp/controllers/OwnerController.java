@@ -26,7 +26,7 @@ public class OwnerController {
 
     // profile/ user account page controller
     @RequestMapping({"/accounts/userHome"})
-    public String dashboard(Model model){
+    public String usreProfile(Model model){
 
         // retireve owner using email from the credentials ..
         // add find by email methods to both personal data and credentails cass
@@ -47,6 +47,14 @@ public class OwnerController {
 
 
         return "account/userHome";
+    }
+
+
+    @RequestMapping({"/accounts/dashboard"})
+    public String dashboard(){
+
+
+        return "account/dashboard";
     }
 
 
