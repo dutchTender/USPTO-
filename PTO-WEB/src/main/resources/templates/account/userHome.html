@@ -840,8 +840,10 @@
         }, 500);
 
 
-
+        ///////////////////////////////////////////////////////////////////////////////////////////
+        // password modal update actions
         // passowrd update on click
+        ////////////////////////////////////////////////////////////////////////////////////////////
 
         $('.updatePasswordButton').click( function () {
 
@@ -850,9 +852,10 @@
 
 
                 alert(data);
-                if(data.contains("status: 200")){
+                //if(data.contains("status: 200")){
                     // show confirmation check mark on form
-                    $('#toggle').delay(1000).click();}
+                    $('#toggle').delay(1000).click();
+                    //}
             });
         });
 
@@ -860,6 +863,15 @@
             $('.circle-loader').toggleClass('load-complete');
             $('.checkmark').toggle();
         });
+
+        // on password modal close
+        $('#updatePassword').on('hidden.bs.modal', function () {
+            // do something…
+            $('.circle-loader').fadeOut(100);
+            $('#toggle').click(); // reset spinner to default active state
+        })
+        // password modal actions complete
+       //////////////////////////////////////////////////////////////////////////
 
     });
 </script>
