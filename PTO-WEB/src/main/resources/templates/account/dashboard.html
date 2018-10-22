@@ -8,7 +8,7 @@
 <body>
 
 <!-- End Navbar -->
-<div class="content" >
+<div class="content" style="position: relative; top:10%;" >
     <div class="container-fluid">
 
         <div class="row page-header">
@@ -28,7 +28,7 @@
             <!-- star of row 1 -->
             <div class="row" id="dashboard-row1">
                 <!--row 1 column 1 -->
-                <div class="col-md-7">
+                <div class="col-md-6">
                     <!--data tables for filings/applications -->
                     <div class="card base-page">
                         <div class="card-header card-header-primary card-header-icon">
@@ -39,14 +39,14 @@
                                 <div class="col-md-5">
                                         <h4 class="card-title">Trademarks Applicatoins/Registrations </h4>
                                 </div>
-                                <div class="col-md-2" style="position: relative;right:-25%;">
+                                <div class="col-md-2" style="position: relative;right:-15%;">
                                         <div class="form-group" ><button  style=" margin-top: 10px; background-color: #008B8B; border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;" class="btn btn-default" type="button" value="New Applicaton"><span class="glyphicon glyphicon-log-in" ></span> &nbsp;&nbsp;New Applicaton&nbsp;</button></div>
                                 </div>
                             </div>
                         </div>
                         <div class="card-body">
                                 <div class="toolbar">
-                                    <!--        Here you can write extra buttons/actions for the toolbar              -->
+                                    <!--        Here you can write extra buttons/actions for the toolbar      -->
                                 </div>
                                 <div class="material-datatables">
                                     <table id="datatablesTrademarks" class="table  table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
@@ -140,7 +140,114 @@
                 <!-- row 1 column 2 -->
                 <div class="col-md-6">
                     <!-- normal tables for announcements-->
+                    <div class="card base-page">
+                        <div class="card-header card-header-primary card-header-icon">
+                            <div class="card-icon" style="border-bottom: black; border-bottom-style: double; border-width: 3px; padding-right: 3%">
+                                <i class="material-icons" style="position: relative; left:15%; "><b></b></i>
+                            </div>
+                            <div class="row" style="background-color: black; color: whitesmoke; position: relative; left:-2.5%;">
+                                <div class="col-md-5">
+                                    <h4 class="card-title">Upcoming Actions Due </h4>
+                                </div>
+                                <div class="col-md-2" style="position: relative;right:-25%;">
+                                    <div class="form-group" ><SELECT  style=" margin-top: 10px; background-color: #008B8B; border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;" class="btn btn-default" type="button" value="New Applicaton"><span class="glyphicon glyphicon-log-in" ></span>
+                                        <OPTION><b>30 Days</b></OPTION>
+                                        <option><b>90 Days</b></option>
+                                        <option><b>7 Days</b></option>
+                                                           </SELECT></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="toolbar">
+                                <!--        Here you can write extra buttons/actions for the toolbar      -->
+                            </div>
+                            <div class="material-datatables">
+                                <table id="datatablesActions" class="table  table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
+                                    <thead>
+                                    <tr>
+                                        <th>Serial ID</th>
+                                        <th>Registration ID</th>
+                                        <th>Mark</th>
+                                        <th>Owner</th>
+                                        <th>Due Date</th>
+                                        <th class="disabled-sorting text-right">Actions</th>
+                                    </tr>
+                                    </thead>
+                                    <tfoot style="border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;background-color: black; color: whitesmoke;" >
+                                    <tr>
+                                        <th>Serial ID</th>
+                                        <th>Registration ID</th>
+                                        <th>Mark</th>
+                                        <th>Owner</th>
+                                        <th>Due Date</th>
+                                        <th class="text-right">Actions</th>
+                                    </tr>
+                                    </tfoot>
+                                    <tbody>
 
+
+
+
+
+                                    <tr>
+                                        <td>Tatyana Fitzpatrick</td>
+                                        <td>Regional Director</td>
+                                        <td>London</td>
+                                        <td>19</td>
+                                        <td>2010/03/17</td>
+                                        <td class="text-right">
+                                            <a href="#" class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">favorite</i></a>
+                                            <a href="#" class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">dvr</i></a>
+                                            <a href="#" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Silva</td>
+                                        <td>Marketing Designer</td>
+                                        <td>London</td>
+                                        <td>66</td>
+                                        <td>2012/11/27</td>
+                                        <td class="text-right">
+                                            <a href="#" class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">favorite</i></a>
+                                            <a href="#" class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">dvr</i></a>
+                                            <a href="#" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Paul Byrd</td>
+                                        <td>Chief Financial Officer (CFO)</td>
+                                        <td>New York</td>
+                                        <td>64</td>
+                                        <td>2010/06/09</td>
+                                        <td class="text-right">
+                                            <a href="#" class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">favorite</i></a>
+                                            <a href="#" class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">dvr</i></a>
+                                            <a href="#" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gloria Little</td>
+                                        <td>Systems Administrator</td>
+                                        <td>New York</td>
+                                        <td>59</td>
+                                        <td>2009/04/10</td>
+                                        <td class="text-right">
+                                            <a href="#" class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">favorite</i></a>
+                                            <a href="#" class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">dvr</i></a>
+                                            <a href="#" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a>
+                                        </td>
+                                    </tr>
+
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- end content-->
+                    </div><!-- end of card div -->
 
                 </div>
                 <!--end of row 1 column 2 -->
