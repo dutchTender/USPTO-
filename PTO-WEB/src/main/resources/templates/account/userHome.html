@@ -883,12 +883,12 @@
                 url: "http://localhost:8080/account/user/email/update/"+currentPW+"/"+newPW,
                 type: 'GET',
                 success: function(data){
-                    alert(data);
+
                     // parse out status msg:
                     var s_code = data.substring(data.indexOf("status:")+7, data.indexOf("status:")+4+7);
-                    alert("s_code: "+s_code);
+
                     var s_msg = data.substring(data.indexOf("msg:")+4, data.length-2);
-                    alert(s_msg);
+
                     if(s_code.trim() == "200"){
                     //if(data.contains("status: 200")){
                     // show confirmation check mark on form
@@ -917,6 +917,8 @@
 
 
         });
+
+        // animate success check mark
 
         $('#toggle').click(function() {
             $('.circle-loader').toggleClass('load-complete');
