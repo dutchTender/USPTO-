@@ -3,16 +3,22 @@
       th:replace="~{fragments/layoutSession :: layout (~{::body},'dashboard')}" xmlns="http://www.w3.org/1999/html">
 <head >
     <meta charset="UTF-8">
-    <title>Registration Home Page</title>
+    <title>Dashboard Home Page</title>
 </head>
 <body>
 
 <!-- End Navbar -->
-<div class="content" style="position: relative; top:-10%;" >
+<div class="content" style="position: relative; top:-10%;background-color: black; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-top-left-radius: 20px;" >
     <div class="container-fluid">
 
-        <div class="row page-header">
-            <h1><b style="color: whitesmoke">eFile HOMEPAGE</b></h1>
+        <div class="row page-header" style="background-color: black;" >
+            <h1><b style="color: whitesmoke; position: relative; left: 10%;">eFile HOMEPAGE</b></h1>
+
+            <div class="tab">
+                <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+                <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+                <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+            </div>
         </div>
 
         <div class="row page-alert" style="display: none">
@@ -28,14 +34,14 @@
             <!-- star of row 1 -->
             <div class="row" id="dashboard-row1">
                 <!--row 1 column 1 -->
-                <div class="col-md-6">
+                <div class="col-md-10">
                     <!--data tables for filings/applications -->
                     <div class="card base-page">
                         <div class="card-header card-header-primary card-header-icon">
                             <div class="card-icon" style="border-bottom: black; border-bottom-style: double; border-width: 3px; padding-right: 3%">
                                 <i class="material-icons" style="position: relative; left:15%; "><b></b></i>
                             </div>
-                            <div class="row" style="background-color: black; color: whitesmoke; position: relative; left:-2.8%;">
+                            <div class="row" style="background-color: black; color: whitesmoke; position: relative; left:-2%;">
                                 <div class="col-md-5">
                                         <h4 class="card-title">Trademarks Applicatoins/Registrations </h4>
                                 </div>
@@ -53,78 +59,72 @@
                                         <thead>
                                         <tr>
                                             <th>Serial ID</th>
-                                            <th>Registration ID</th>
+                                            <th>Reg ID</th>
                                             <th>Mark</th>
                                             <th>Owner</th>
                                             <th>Status</th>
-                                            <th class="disabled-sorting text-right">Actions</th>
+                                            <th class="disabled-sorting text-right">Image</th>
                                         </tr>
                                         </thead>
                                         <tfoot style="border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;background-color: black; color: whitesmoke;" >
                                         <tr>
                                             <th>Serial ID</th>
-                                            <th>Registration ID</th>
-                                            <th>Mark</th>
+                                            <th>Reg ID</th>
+                                            <th>Mark Text</th>
                                             <th>Owner</th>
                                             <th>Status</th>
-                                            <th class="text-right">Actions</th>
-                                        </tr>
+                                            <th class="text-right">Image
                                         </tfoot>
                                         <tbody>
 
-
-
-
-
                                         <tr>
-                                            <td>Tatyana Fitzpatrick</td>
-                                            <td>Regional Director</td>
-                                            <td>London</td>
-                                            <td>19</td>
-                                            <td>2010/03/17</td>
+                                            <td>87541256</td>
+                                            <td>N/a</td>
+                                            <td>VAKKER</td>
+                                            <td>BAO KUN</td>
+                                            <td>654 - REPORT COMPLETED SUSPENSION CHECK - CASE STILL SUSPENDED</td>
                                             <td class="text-right">
-                                                <a href="#" class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">favorite</i></a>
-                                                <a href="#" class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">dvr</i></a>
-                                                <a href="#" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a>
+
+                                                <a href="#mark-preview-modal"   data-toggle="modal" data-target="#mark-preview-modal" class="btn btn-link btn-warning btn-just-icon edit trademarks-view"><i class="material-icons">dvr</i></a>
+                                                <input style="display: none;" value="../resources/data_images/vakker.png">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>Michael Silva</td>
-                                            <td>Marketing Designer</td>
-                                            <td>London</td>
-                                            <td>66</td>
-                                            <td>2012/11/27</td>
+                                            <td>87663325</td>
+                                            <td>87663325</td>
+                                            <td>ZERO BLOG THIRTY</td>
+                                            <td>Barstool Sports, Inc</td>
+                                            <td>700 - REGISTERED</td>
                                             <td class="text-right">
-                                                <a href="#" class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">favorite</i></a>
-                                                <a href="#" class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">dvr</i></a>
-                                                <a href="#" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Paul Byrd</td>
-                                            <td>Chief Financial Officer (CFO)</td>
-                                            <td>New York</td>
-                                            <td>64</td>
-                                            <td>2010/06/09</td>
-                                            <td class="text-right">
-                                                <a href="#" class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">favorite</i></a>
-                                                <a href="#" class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">dvr</i></a>
-                                                <a href="#" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Gloria Little</td>
-                                            <td>Systems Administrator</td>
-                                            <td>New York</td>
-                                            <td>59</td>
-                                            <td>2009/04/10</td>
-                                            <td class="text-right">
-                                                <a href="#" class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">favorite</i></a>
-                                                <a href="#" class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">dvr</i></a>
-                                                <a href="#" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a>
-                                            </td>
-                                        </tr>
 
+                                                <a href="#mark-preview-modal" data-toggle="modal" data-target="#mark-preview-modal" class="btn btn-link btn-warning btn-just-icon edit trademarks-view"><i class="material-icons">dvr</i></a>
+                                                <input style="display: none;" value="../resources/data_images/zero30.jpg">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>87653515</td>
+                                            <td>N/A</td>
+                                            <td>SMART CONNECTED SECURE</td>
+                                            <td>Microchip Technology Incorporated</td>
+                                            <td>686 - PUBLISHED FOR OPPOSITION</td>
+                                            <td class="text-right">
+
+                                                <a href="#mark-preview-modal" data-toggle="modal" data-target="#mark-preview-modal" class="btn btn-link btn-warning btn-just-icon edit trademarks-view"><i class="material-icons">dvr</i></a>
+                                                <input style="display: none;" value="../resources/data_images/micro-technology-inc.png">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>87452125</td>
+                                            <td>N/A</td>
+                                            <td>JUMP SHOES & STREETWEAR</td>
+                                            <td>antonio cirillo, DBA gui.ar.lab.srls</td>
+                                            <td>641 - NON-FINAL ACTIOIN - MAILED</td>
+                                            <td class="text-right">
+
+                                                <a href="#mark-preview-modal" data-toggle="modal" data-target="#mark-preview-modal" class="btn btn-link btn-warning btn-just-icon edit trademarks-view"><i class="material-icons">dvr</i></a>
+                                                <input style="display: none;" value="../resources/data_images/jump.png">
+                                            </td>
+                                        </tr>
 
 
 
@@ -185,6 +185,7 @@
                                     </tr>
                                     </tfoot>
                                     <tbody>
+
 
 
 
@@ -282,11 +283,40 @@
 
 
 
+<!--update password modal -->
+<div id="mark-preview-modal" class="modal  fade modal-lg" role="dialog" tabindex="-1" >
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Trademarks image view</h4>
+            </div>
+            <div class="modal-body">
+
+             <iframe id="trademarksFrame" src=""></iframe>
+
+
+
+            </div>
+            <div class="modal-footer">
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- end of update password modal -->
+
+
 
 
 
 <script>
     $(document).ready(function() {
+
         $('.base-page').hide();
         setTimeout(function() {
             // after 1000 ms we add the class animated to the login/register card
@@ -294,7 +324,11 @@
         }, 500);
 
 
+        $('.trademarks-view').click( function () {
 
+                $('#trademarksFrame').prop('src',$(this).next().val() );
+        });
+        // make this jquery expression more generic
 
     });
 </script>

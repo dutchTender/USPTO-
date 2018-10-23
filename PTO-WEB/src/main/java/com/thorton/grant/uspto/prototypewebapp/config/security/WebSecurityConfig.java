@@ -48,7 +48,7 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                .headers().frameOptions().disable().and()
+                .headers().frameOptions().sameOrigin().and()
                 .authorizeRequests()
                 .antMatchers( "/resources/**", "/h2-console/**", "/console/**","/webjars/**","/registration/**","/","/home","/newUser","/aboutUs/**","/contact/**","/public/**","/owner/**").permitAll()
                 //.antMatchers("/vets**","/owners**").hasRole("vet")
