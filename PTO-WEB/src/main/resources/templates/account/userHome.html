@@ -884,18 +884,25 @@
                 type: 'GET',
                 success: function(data){
                     alert(data);
-                    alert(data.indexOf("status:"));
-
                     // parse out status msg:
                     var s_code = data.substring(data.indexOf("status:")+7, data.indexOf("status:")+4+7);
-                    alert(s_code);
+                    alert("s_code: "+s_code);
                     var s_msg = data.substring(data.indexOf("msg:")+4, data.length-2);
                     alert(s_msg);
-
+                    if(s_code.trim() == "200"){
                     //if(data.contains("status: 200")){
                     // show confirmation check mark on form
-                    $('#toggle').delay(1000).click();
-                    //}
+                        $('#toggle').delay(1000).click();
+                        $(".validationMsgArea span").text(s_msg);
+                        $(".validationMsgArea span").css('color','green');
+                    }
+                    else{
+                        $('.circle-loader').fadeOut(100);
+                        $('.x-mark').fadeIn(500);
+                        $(".validationMsgArea span").text(s_msg);
+                        $(".validationMsgArea span").css('color','red');
+                    }
+
                 },
                 error: function(data) {
 
@@ -919,8 +926,20 @@
         // on password modal close
         $('#updatePassword').on('hidden.bs.modal', function () {
             // do something…
-            $('.circle-loader').fadeOut(100);
-            $('#toggle').click(); // reset spinner to default active state
+
+            // check if x-mark is loaded
+            if ($('.x-mark').css('display') == 'block') {
+                $('.x-mark').css('display', 'none');
+            }
+            else {
+
+                $('.circle-loader').css('display', 'none');
+
+                $('#toggle').click(); // reset spinner to default active state
+            }
+            // clear text area
+            $(".validationMsgArea span").text(" ");
+
 
         })
         // password modal actions complete
