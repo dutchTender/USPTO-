@@ -784,7 +784,7 @@
                                     <div class="col-sm-6">
 
                                         <div class="form-group">
-                                            <input type="password"  id="oldpassword" placeholder="Password" class="form-control" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;"  th:value="${account.password}">
+                                            <input type="password"  id="current-password" placeholder="Password" class="form-control" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;"  th:value="${account.password}">
                                             <small id="passwordHelp1" class="form-text text-muted">Enter you current password here.</small>
 
                                         </div>
@@ -798,7 +798,7 @@
                                     <div class="col-sm-6">
 
                                         <div class="form-group">
-                                            <input type="password"  id="password" placeholder="Password" class="form-control" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;" >
+                                            <input type="password"  id="new-password" placeholder="Password" class="form-control" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;" >
                                             <small id="passwordHelp2" class="form-text text-muted">Enter your New password here.</small>
 
                                         </div>
@@ -848,7 +848,20 @@
         $('.updatePasswordButton').click( function () {
 
             $('.circle-loader').fadeIn(100);
-            $.get("http://localhost:8080/account/email/update/lzhang421@gmail.com/12345/jordanat234", function (data, status) {
+
+            // get input from modal form input
+            var currentPW;
+            var newPW;
+
+            currentPW = $('#current-password').val();
+            newPW =  $('#new-password').val();
+
+            alert(currentPW);
+            alert(newPW);
+
+
+
+            $.get("http://localhost:8080/account/user/email/update/"+currentPW+"/"+newPW, function (data, status) {
 
 
                 alert(data);

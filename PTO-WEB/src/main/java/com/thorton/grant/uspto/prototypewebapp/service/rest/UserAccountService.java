@@ -2,6 +2,13 @@ package com.thorton.grant.uspto.prototypewebapp.service.rest;
 
 
 import com.thorton.grant.uspto.prototypewebapp.factories.ServiceBeanFactory;
+import com.thorton.grant.uspto.prototypewebapp.interfaces.UserCredentialsService;
+import com.thorton.grant.uspto.prototypewebapp.model.entities.UserCredentials;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,9 +22,18 @@ public class UserAccountService {
         this.serviceBeanFactory = serviceBeanFactory;
     }
 
-    @RequestMapping(method = RequestMethod.GET, value="/account/email/update/{email}/{password1}/{password2}")
+
+
+
+
+
+
+
+
+
+    @RequestMapping(method = RequestMethod.GET, value="/account/user/email/update/{password1}/{password2}")
     @ResponseBody
-    String updateUserPassword(@PathVariable String email, @PathVariable String password1, @PathVariable String password2){
+    String updateUserPassword(@PathVariable String password1, @PathVariable String password2){
 
 
 
@@ -28,11 +44,45 @@ public class UserAccountService {
         // set status code based on if that matched
 
         // if matched. update password for credentials object
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        String email = authentication.getName();
+        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+        UserCredentialsService userCredentialsService = serviceBeanFactory.getUserCredentialsService();
+        UserCredentials userCredentials = userCredentialsService.findByEmail(email);
+        boolean pwMatched = bCryptPasswordEncoder.matches(password1, userCredentials.getPassword());
+        //String storedPw = authentication.getPrincipal().toString();
+
+        String statusCode = "200";
+        String responseMsg="{ status:";
+        if(pwMatched == false){
+            statusCode = "420";
+            responseMsg = "Entered current password did not match!";
+        }
+        else {
+            // update pass word
+            // verify password is not null
+            if(password2 != "" || password2 != null){
+
+                // user userCredentials object to save passowrd, then save object to repository via service
 
 
+                responseMsg = "Your password have been saved";
 
-        return "{status: 200}" +
-                "{requested email: "+email+"}     "+"passswd: "+password1+" }" +
-                "{new password :"+password2+"   }";
+            }
+            else{
+                statusCode = "444";
+                responseMsg = "New password can not be empty.";
+            }
+        }
+
+        responseMsg = responseMsg + statusCode +" } { "+responseMsg+" }";
+        System.out.println(password1);
+        //UserCredentialsService userCredentialsService = serviceBeanFactory.getUserCredentialsService();
+        //userCredentialsService.findByEmail(email);
+
+
+        return "{status: "+statusCode+"}" + "{requested email: "+email+"}";
     }
 }
