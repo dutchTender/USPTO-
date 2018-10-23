@@ -8,16 +8,16 @@
 <body>
 
 <!-- End Navbar -->
-<div class="content" style="position: relative; top:-10%;background-color: black; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-top-left-radius: 20px;" >
+<div class="content" style="position: relative; top:-10%;background-color: black;  border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-top-left-radius: 20px;" >
     <div class="container-fluid">
 
         <div class="row page-header" style="background-color: black;" >
             <h1><b style="color: whitesmoke; position: relative; left: 10%;">eFile HOMEPAGE</b></h1>
 
             <div class="tab">
-                <button class="tablinks" onclick="openCity(event, 'London')">London</button>
-                <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-                <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+                <button class="tablinks" onclick="openCity(event, 'London')">Filings/Registrations</button>
+                <button class="tablinks" onclick="openCity(event, 'Paris')">Upcoming actions</button>
+                <button class="tablinks" onclick="openCity(event, 'Tokyo')">Announcements</button>
             </div>
         </div>
 
@@ -34,19 +34,19 @@
             <!-- star of row 1 -->
             <div class="row" id="dashboard-row1">
                 <!--row 1 column 1 -->
-                <div class="col-md-10">
+                <div class="col-md-8">
                     <!--data tables for filings/applications -->
                     <div class="card base-page">
                         <div class="card-header card-header-primary card-header-icon">
                             <div class="card-icon" style="border-bottom: black; border-bottom-style: double; border-width: 3px; padding-right: 3%">
                                 <i class="material-icons" style="position: relative; left:15%; "><b></b></i>
                             </div>
-                            <div class="row" style="background-color: black; color: whitesmoke; position: relative; left:-2%;">
+                            <div class="row" style="background-color: black; color: whitesmoke; position: relative; left:-2.2%;">
                                 <div class="col-md-5">
                                         <h4 class="card-title">Trademarks Applicatoins/Registrations </h4>
                                 </div>
                                 <div class="col-md-2" style="position: relative;right:-15%;">
-                                        <div class="form-group" ><button  style=" margin-top: 10px; background-color: #008B8B; border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;" class="btn btn-default" type="button" value="New Applicaton"><span class="glyphicon glyphicon-log-in" ></span> &nbsp;&nbsp;New Applicaton&nbsp;</button></div>
+                                    <div class="form-group" ><button  style=" margin-top: 10px; background-color: #008B8B; border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;" class="btn" type="button" value="New Applicaton"><span class="glyphicon glyphicon-log-in" ></span><b> &nbsp;&nbsp;New Applicaton&nbsp;</b></button></div>
                                 </div>
                             </div>
                         </div>
@@ -55,25 +55,25 @@
                                     <!--        Here you can write extra buttons/actions for the toolbar      -->
                                 </div>
                                 <div class="material-datatables">
-                                    <table id="datatablesTrademarks" class="table  table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
+                                    <table id="datatablesTrademarks" class="table  table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%; font:bold;">
                                         <thead>
                                         <tr>
                                             <th>Serial ID</th>
-                                            <th>Reg ID</th>
-                                            <th>Mark</th>
+                                            <th style="min-width: 120px;">Registration ID</th>
+                                            <th>Mark Text</th>
                                             <th>Owner</th>
                                             <th>Status</th>
-                                            <th class="disabled-sorting text-right">Image</th>
+                                            <th style="min-width: 100px;" class="disabled-sorting text-right">Mark Image</th>
                                         </tr>
                                         </thead>
                                         <tfoot style="border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;background-color: black; color: whitesmoke;" >
                                         <tr>
                                             <th>Serial ID</th>
-                                            <th>Reg ID</th>
+                                            <th>Registration ID</th>
                                             <th>Mark Text</th>
                                             <th>Owner</th>
                                             <th>Status</th>
-                                            <th class="text-right">Image
+                                            <th class="text-right">Mark Image
                                         </tfoot>
                                         <tbody>
 
@@ -150,7 +150,7 @@
                                     <h4 class="card-title">Upcoming Filings and Registrations Actions </h4>
                                 </div>
                                 <div class="col-md-2" style="position: relative;right:-25%;">
-                                    <div class="form-group" ><SELECT  style=" margin-top: 10px; background-color: #008B8B; border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;" class="btn btn-default" type="button" value="New Applicaton"><span class="glyphicon glyphicon-log-in" ></span>
+                                    <div class="form-group" ><SELECT  style=" margin-top: 10px; background-color: #008B8B; border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;" class="btn" type="button" value="New Applicaton"><span class="glyphicon glyphicon-log-in" ></span>
                                         <OPTION><b>30 Days</b></OPTION>
                                         <option><b>90 Days</b></option>
                                         <option><b>7 Days</b></option>
