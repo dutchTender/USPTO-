@@ -66,9 +66,10 @@ public class UserAccountService {
             if(password2 != "" || password2 != null){
 
                 // user userCredentials object to save passowrd, then save object to repository via service
+                userCredentials.setPassword(bCryptPasswordEncoder.encode(password2));
+                userCredentialsService.save(userCredentials);
 
-
-                responseMsg = "Your password have been saved";
+                responseMsg = "Your new password have been saved";
 
             }
             else{
