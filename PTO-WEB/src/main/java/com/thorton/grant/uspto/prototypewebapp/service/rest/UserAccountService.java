@@ -55,7 +55,7 @@ public class UserAccountService {
         //String storedPw = authentication.getPrincipal().toString();
 
         String statusCode = "200";
-        String responseMsg="{ status:";
+        String responseMsg;
         if(pwMatched == false){
             statusCode = "420";
             responseMsg = "Entered current password did not match!";
@@ -77,12 +77,12 @@ public class UserAccountService {
             }
         }
 
-        responseMsg = responseMsg + statusCode +" } { "+responseMsg+" }";
+        responseMsg = "{status:" + statusCode +" } { msg:"+responseMsg+" }";
         System.out.println(password1);
         //UserCredentialsService userCredentialsService = serviceBeanFactory.getUserCredentialsService();
         //userCredentialsService.findByEmail(email);
 
 
-        return "{status: "+statusCode+"}" + "{requested email: "+email+"}";
+        return responseMsg;
     }
 }
