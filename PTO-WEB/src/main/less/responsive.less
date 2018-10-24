@@ -279,8 +279,11 @@
   /* Modal styles */
   .modal .modal-dialog {
     //max-width: 400px;
+    min-height: 100%;
 
   }
+
+  /*image preview modals*/
 
   .modal .modal-header, .modal .modal-body, .modal .modal-footer {
     padding: 20px 30px;
@@ -288,6 +291,13 @@
 
   .modal .modal-content {
     border-radius: 3px;
+  }
+  .modal-content {
+    min-height: 100%;
+    min-width: 120%;
+    height: auto;
+    border-radius: 0;
+    background: transparent;
   }
 
   .modal .modal-footer {

@@ -55,7 +55,7 @@
                                     <!--        Here you can write extra buttons/actions for the toolbar      -->
                                 </div>
                                 <div class="material-datatables">
-                                    <table id="datatablesTrademarks" class="table  table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%; font:bold;">
+                                    <table id="datatablesTrademarks" class="table  table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%; ">
                                         <thead>
                                         <tr>
                                             <th>Serial ID</th>
@@ -122,7 +122,7 @@
                                             <td class="text-right">
 
                                                 <a href="#mark-preview-modal" data-toggle="modal" data-target="#mark-preview-modal" class="btn btn-link btn-warning btn-just-icon edit trademarks-view"><i class="material-icons">dvr</i></a>
-                                                <input style="display: none;" value="../resources/data_images/jump.png">
+                                                <input style="display: none;" value="../resources/data_images/coca-cola-tm.jpg">
                                             </td>
                                         </tr>
 
@@ -164,7 +164,7 @@
                             </div>
 
                             <div>
-                                <table id="example" class="display" width="100%"></table>
+                                <table id="example" class="display  table-no-bordered table-hover" width="100%"></table>
                             </div>
                         </div>
                         <!-- end content-->
@@ -204,7 +204,7 @@
 
 
 <!--update password modal -->
-<div id="mark-preview-modal" class="modal  fade modal-lg" role="dialog" tabindex="-1" >
+<div id="mark-preview-modal" class="modal fade modal-lg" role="dialog" tabindex="-1" >
     <div class="modal-dialog">
 
         <!-- Modal content-->
@@ -215,9 +215,8 @@
             </div>
             <div class="modal-body">
 
-             <iframe id="trademarksFrame" src=""></iframe>
 
-
+            <img id="trademarksFrame" src="">
 
             </div>
             <div class="modal-footer">
@@ -244,16 +243,14 @@
         }, 500);
 
 
-        $('.trademarks-view').click( function () {
-
-                $('#trademarksFrame').prop('src',$(this).next().val() );
-        });
-        // make this jquery expression more generic
 
         var dataSet = [
-            [ "87541256", "N/A", "VAKKER", "BAO KUN", "654 - REPORT COMPLETED SUSPENSION CHECK - CASE STIL SUSPENDED", "xxx" ],
-            [ "87663325", "87663325", "Zero Blog Thirty", "Barstool Sports, Inc", "700 - REGISTERED", "xxx" ],
-            [ "8765315", "N/A", "SMART CONNECTED SECURE", "Micro Technology, Inc", "686 - PUBLISHED FOR OPPOSITION", "xxxx" ]
+            [ "87541256", "N/A", "VAKKER", "BAO KUN", "654 - REPORT COMPLETED SUSPENSION CHECK - CASE STIL SUSPENDED", " <a href=\"#mark-preview-modal\"   data-toggle=\"modal\" data-target=\"#mark-preview-modal\" class=\"btn btn-link btn-warning btn-just-icon edit trademarks-view\"><i class=\"material-icons\">dvr</i></a>\n" +
+            "                                                <input style=\"display: none;\" value=\"../resources/data_images/vakker.png\">" ],
+            [ "87663325", "87663325", "Zero Blog Thirty", "Barstool Sports, Inc", "700 - REGISTERED", "<a href=\"#mark-preview-modal\" data-toggle=\"modal\" data-target=\"#mark-preview-modal\" class=\"btn btn-link btn-warning btn-just-icon edit trademarks-view\"><i class=\"material-icons\">dvr</i></a>\n" +
+            "                                                <input style=\"display: none;\" value=\"../resources/data_images/zero30.jpg\">" ],
+            [ "2765315", "2345678", "Coca Cola", "Coca Cola Corp", "686 - PUBLISHED FOR OPPOSITION", "<a href=\"#mark-preview-modal\" data-toggle=\"modal\" data-target=\"#mark-preview-modal\" class=\"btn btn-link btn-warning btn-just-icon edit trademarks-view\"><i class=\"material-icons\">dvr</i></a>\n" +
+            "                                                <input style=\"display: none;\" value=\"../resources/data_images/coca-cola-tm.jpg\">" ]
 
 
          ];
@@ -266,10 +263,22 @@
                 { title: "Registration ID" },
                 { title: "Mark Link" },
                 { title: "Owner" },
-                { title: "Start date" },
+                { title: "Status" },
                 { title: "Mark Image" }
             ]
         } );
+
+
+        // load trademarks image url to modal
+        $('.trademarks-view').on('click', function () {
+
+            $('#trademarksFrame').prop('src',$(this).next().val() );
+        });
+
+
+
+        // make this jquery expression more generic
+
 
 
 
