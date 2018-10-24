@@ -46,15 +46,19 @@
                             <div class="card-footer justify-content-center" style="padding-top: 20px; padding-bottom:50px; position:relative;top: 10px;">
 
                                 <div class="form-group" ><button style="position:relative; left:30%; right:30%; size:auto; background-color: #546E8C;  border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;" class="btn" type="submit" value="Sign In"><span class="glyphicon glyphicon-log-in" ></span><b> &nbsp;&nbsp;&nbsp;&nbsp;    Sign In&nbsp;</b></button></div>
+
+                                <!-- Login Form -->
+                                <div  style="color: red; position: relative; top:20%; right:-22%;" th:if="${param.error}">
+                                    <b>Invalid username and password.</b>
+                                </div>
+                                <div  style="color: green;font:bold; position: relative; top:20%; right:-22%;" th:if="${param.logout}">
+                                    You have been logged out.
+                                </div>
+
+
                             </div>
 
-                            <!-- Login Form -->
-                            <div  th:if="${param.error}">
-                                Invalid username and password.
-                            </div>
-                            <div  th:if="${param.logout}">
-                                You have been logged out.
-                            </div>
+
 
                         </div>
 
